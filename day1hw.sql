@@ -41,11 +41,10 @@ GROUP BY film_id
 ORDER BY COUNT(film_id) DESC;
 -- 8. From store_id 1, how many customers have a last name ending with ‘es’? (use customer table)
 SELECT last_name,
-    COUNT(store_id) as store_id
+    store_id
 FROM customer
 WHERE last_name LIKE '%es'
-GROUP BY last_name
-HAVING COUNT(store_id) = 1;
+    AND store_id = 1;
 -- 9. How many payment amounts (4.99, 5.99, etc.) had a number of rentals above 250 for customers 
 -- - - with ids between 380 and 430 ?
 SELECT customer_id,
